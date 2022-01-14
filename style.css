@@ -39,13 +39,13 @@ img{vertical-align: top;max-width: 100%}
 /*Fonts*/
 @font-face {
 font-family: "Avenir Next Cyr";
-src: url("./avenirnextcyr-demi.ttf") format("truetype");
+src: url("avenirnextcyr-demi.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "Avenir Next CyrMedium";
-    src: url("./avenirnextcyr-medium.ttf") format("truetype");
+    src: url("avenirnextcyr-medium.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
