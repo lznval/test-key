@@ -1,0 +1,398 @@
+/*Обнуление*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;max-width: 100%}
+
+/*************/
+
+/*Fonts*/
+@font-face {
+font-family: "Avenir Next Cyr";
+src: url("/avenirnextcyr-demi.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Avenir Next CyrMedium";
+    src: url("/avenirnextcyr-medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/*************/
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(113.69deg, #082354 -2.79%, #03092D 33.14%, #030B32 100%);
+    padding: 21px 0 30px;
+}
+.container {
+    max-width: 1470px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+.header__nav{
+}
+.header__list{
+    display: flex;
+}
+.header__link{
+    margin-right: 60px;
+    color: #FEFEFE;
+    font-family: "Avenir Next Cyr";
+    font-size: 24px;
+    line-height: 28px;
+    transition: all .3s ease-in-out;
+}
+.header__link:hover {
+    color: #E571F6;
+}
+.header__logo{
+    width: 270px;
+    height: 79px;
+    background-image: url('./img/bg-logo.png');
+    background-position: 50% 50%;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__logo-link{
+    color: #FEFEFE;
+    font-family: "Avenir Next Cyr";
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.main{
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./img/Game BG.png');
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.key-popup{
+    background: #030A2E;
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #E571F6;
+    border-radius: 15px;
+    padding: 24px 36px;
+    z-index: 3;
+}
+.key-popup__title{
+    font-family: "Avenir Next Cyr";
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+.key-popup__title span {
+    color: #E571F6;
+}
+.key-popup__img {
+    max-width: 100%;
+    margin: 24px 0 12px 0;
+}
+.key-popup__count{
+    font-family: "Avenir Next Cyr";
+    font-size: 28px;
+    line-height: 36px;
+    color: #E571F6;
+}
+.levels{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #FFFFFF;
+    font-family: "Avenir Next Cyr";
+    margin-bottom: 24px;
+}
+.levels__top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 16px;
+    background-image: url('./img/level1.png');
+    background-position: 50% 50%;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    width: 417px;
+    height: 59px;
+}
+.levels__bottom{
+    display: flex;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.levels__bottom-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./img/levels.png');
+    background-position: 50% 50%;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    width: 135px;
+    height: 42px;
+    margin-right: 43px;
+}
+.levels__bottom-item:last-child{
+    margin-right: 0;
+}
+.key{
+    position: relative;
+}
+.key__key {
+    position: absolute;
+    top: 116px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    animation: keyAnimation 2.5s ease-in-out infinite;
+}
+@keyframes keyAnimation {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 25px);
+    }
+    100%{
+        transform: translate(-50%, 0);
+    }
+}
+.key__jail{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.key__jail.top{
+    top: 40px;
+}
+.key__jail.bottom{
+    top: 154px;
+}
+.keys{
+    margin: 25px 0;
+}
+.footer__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.footer__social{
+}
+.footer__list{
+    display: flex;
+    align-items: center;
+}
+.footer__list > li {
+    margin-right: 60px;
+}
+.footer__list > li:last-child{
+    margin-right: 0;
+}
+.footer__link{
+}
+.footer__contact{
+    justify-items: flex-end;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.footer__contact a {
+    color: #E571F6;
+    text-decoration: underline;
+    font-family: "Avenir Next Cyr";
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.header__burger {
+    width: 60px;
+    height: 40px;
+    position: fixed;
+    right: 15px;
+    top: 55px;
+    z-index: 101;
+    display: none;
+}
+.header__burger span {
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+}
+.header__burger span:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+}
+.header__burger span:nth-child(3) {
+    bottom: 0;
+    top: auto;
+    left: 0;
+    transform: translateY(0);
+}
+.header__burger.active span {
+    opacity: 0;
+}
+.header__burger.active span:nth-child(1) {
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 1;
+    top: 33%;
+}
+.header__burger.active span:nth-child(3) {
+    transform: translateY(-50%) rotate(45deg);
+    bottom: 50%;
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .key-popup {
+        padding: 20px;
+    }
+    .key-popup__title {
+        font-size: 20px;
+    }
+    .key-popup__img {
+        width: 45%;
+    }
+    .key-popup__count {
+        font-size: 20px;
+    }
+}
+@media (max-width: 900px) {
+    .header__burger {
+        display: block;
+    }
+    .header {
+        align-self: inherit;
+    }
+    .header__nav {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-1000%, -50%);
+        z-index: 100;
+        width: 101%;
+        height: 100%;
+        transition: all .5s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header__nav.active {
+        transform: translate(-50%, -50%);
+        background: linear-gradient(113.69deg, #082354 -2.79%, #03092D 33.14%, #030B32 100%);
+    }
+    .header__list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__list li {
+        margin-bottom: 50px;
+    }
+    .header__link {
+        margin-right: 0;
+        font-size: 36px;
+    }
+    .header__logo {
+        position: fixed;
+        transform: translateX(-1000%);
+        left: 50%;
+        z-index: 100;
+        bottom: 200px;
+        transition: all .5s ease-in-out;
+    }
+    .header__logo.active {
+        transform: translateX(-50%);
+    }
+    .main {
+        padding-top: 95px;
+    }
+}
+@media (max-width: 415px) {
+    .key-popup{
+        display: none;
+    }
+    .footer__list {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .footer__list > li {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .footer__contact {
+        right: 50%;
+        transform: translate(50%, -50%);
+        top: auto;
+        bottom: 0px;
+    }
+}
